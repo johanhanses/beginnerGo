@@ -5,25 +5,75 @@ import (
 )
 
 func main() {
-	// A comment
-	var name string = "Johan"
-	fmt.Printf("This is my name %s\n", name)
+	age := 30
 
-	age := 41
-	fmt.Printf("This is my age %d\n", age)
+	if age >= 18 {
+		fmt.Println("You are an adult")
+	} else if age >= 13 {
+		fmt.Println("you are a teenager")
+	} else {
+		fmt.Println("you are a child")
+	}
 
-	var city string
-	city = "Falun"
-	fmt.Printf("This is my city %s\n", city)
+	day := "Tuesday"
 
-	var country, continent string = "Sweden", "Europe"
-	fmt.Printf("This is my country %s and this is my continent %s\n", country, continent)
+	switch day {
+	case "Monday":
+		fmt.Println("start of the week")
+	case "Tuesday", "Wednesday", "Thursday":
+		fmt.Println("midweek")
+	case "Friday":
+		fmt.Println("TGIF")
+	default:
+		fmt.Println("its the weekend")
+	}
 
-	var (
-		isEmployed bool   = true
-		salary     int    = 50000
-		position   string = "developer"
-	)
+	for i := 0; i < 5; i++ {
+		fmt.Println("This is i", i)
+	}
 
-	fmt.Printf("isEmployed: %t this is my salary: %d and this is my position %s\n", isEmployed, salary, position)
+	counter := 0
+	for counter < 3 {
+		fmt.Println("This is the counter", counter)
+		counter++
+	}
+
+	iterations := 0
+	for {
+		if iterations > 3 {
+			break
+		}
+		iterations++
+	}
+
+	// Arrays and Slices
+	numbers := [5]int{10, 20, 30, 40, 50}
+	numbers[0] = 60 //reassign the first position
+
+	fmt.Printf("this is our array %v\n", numbers)
+	fmt.Printf("this is our array %v\n", numbers[2])
+	fmt.Printf("this is our array %v\n", len(numbers))
+
+	fmt.Println("this is the last value", numbers[len(numbers)-1])
+
+	matrix := [2][3]int{
+		{1, 2, 3},
+		{4, 5, 6},
+	}
+
+	fmt.Printf("this is our matrix %v\n", matrix)
+
+	allNumbers := numbers[:]
+	firstThree := numbers[0:3
+
+	allNumbers
+
+}
+
+func add(a int, b int) int {
+	return a + b
+}
+
+func calculateSumAndProduct(a, b int) (int, int) {
+	return a + b, a * b
 }
