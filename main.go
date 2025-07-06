@@ -39,7 +39,27 @@ func main() {
 		},
 	}
 
-	fmt.Printf("%+v\n", contact)
-
+	fmt.Printf("contact %+v\n", contact)
 	fmt.Printf("employee %+v\n", employee)
+
+	fmt.Println("Name before:", person.Name)
+
+	person.modifyPersonName("Johan")
+
+	fmt.Println("Name after:", person.Name)
+
+	x := 20
+	ptr := &x
+
+	fmt.Printf("value of x: %d and address of x %p\n", x, ptr)
+
+	*ptr = 30
+
+	fmt.Printf("value of new x: %d and address of x %p\n", x, ptr)
+
+}
+
+func (p *Person) modifyPersonName(name string) {
+	p.Name = name
+	fmt.Println("inside scope new name:", p.Name)
 }
